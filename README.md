@@ -66,3 +66,96 @@ Portfolio screening task assigned by Alex Kravets, CEO @ 100Hires.
 ## Repository
 
 **GitHub:** https://github.com/kanishkaverma942-oss/Kanishka-100Hires
+
+---
+
+## Step 2 — Research Project: Cold Outreach Pipeline for B2B SaaS
+
+### Topic & Why It Was Chosen
+
+**Topic**: Cold Outreach Pipeline for B2B SaaS
+
+Cold outreach was chosen because it's the core growth engine for B2B SaaS companies — and directly relevant to 100Hires' own business model. Understanding what works in cold outreach (for both email and LinkedIn) applies immediately to the kind of outbound hiring and sales motions 100Hires runs. Choosing a topic the company lives every day demonstrates contextual awareness, not just research ability.
+
+---
+
+### Experts Researched (10 Total)
+
+#### Group A — YouTube Experts (transcripts collected)
+
+| # | Name | Channel | Why Selected |
+|---|------|---------|-------------|
+| 1 | Alex Hormozi | [@AlexHormozi](https://www.youtube.com/@AlexHormozi) | $100M+ in sales; cold outreach frameworks used by thousands of B2B companies |
+| 2 | Patrick Dang | [@patrickdang](https://www.youtube.com/@patrickdang) | 300K+ subscribers; ex-Oracle SDR; most-watched cold outreach channel |
+| 3 | Alex Berman | [@AlexBerman](https://www.youtube.com/@AlexBerman) | Founder of $10M/yr agency built entirely on cold email |
+| 4 | 30 Min to President's Club | [@30MPC](https://www.youtube.com/@30MPC) | #1 sales podcast; 60K+ newsletter subscribers; tactical cold call/email breakdowns |
+| 5 | Alex Vacca (ColdIQ) | [@AlexVacca](https://www.youtube.com/@AlexVacca) | $7M ARR cold outreach agency; publishes exact sequences and toolstacks used for clients |
+
+#### Group B — LinkedIn Experts (posts collected)
+
+| # | Name | LinkedIn | Why Selected |
+|---|------|---------|-------------|
+| 6 | Josh Braun | [josh-braun](https://www.linkedin.com/in/josh-braun) | Author of *Outbound*; psychology-driven cold messaging frameworks |
+| 7 | Jason Bay | [jasondbay](https://www.linkedin.com/in/jasondbay) | Founder of Blissful Prospecting; daily LinkedIn poster; REPLY method creator |
+| 8 | Belal Batrawy | [belbatrawy](https://www.linkedin.com/in/belbatrawy) | Founder of Death to Fluff; viral anti-manipulation cold outreach posts |
+| 9 | Justin Michael | [michaeljustin](https://www.linkedin.com/in/michaeljustin) | Author of *Tech-Powered Sales*; 20+ years at Salesforce/LinkedIn |
+| 10 | Jack Reamer | [jackreamer](https://www.linkedin.com/in/jackreamer) | CEO SalesBread; publishes reply-rate data from 1M+ analyzed emails |
+
+---
+
+### How Content Was Collected
+
+**YouTube transcripts**:
+- Tool: `youtube-transcript-api` Python library (`pip install youtube-transcript-api`)
+- Method: `YouTubeTranscriptApi().fetch(video_id)` → joined transcript segments into full text
+- 5 videos per expert → 25 transcript files total
+- Files saved as `research/youtube-transcripts/[author]/[video-slug].md`
+
+**LinkedIn posts**:
+- Tool: `WebFetch` on public LinkedIn profile activity pages and individual post URLs
+- Supplemented with Google search to surface high-engagement posts where profile pages were blocked
+- ColdIQ official guide fetched from `coldiq.com/cold-email-guide` via WebFetch
+- SalesBread content fetched from `salesbread.com` (Jack Reamer's primary publishing platform)
+- Files saved as `research/linkedin-posts/[name].md`
+
+---
+
+### Repo Structure
+
+```
+research/
+  sources.md                          ← all 10 experts annotated with why they were selected
+  youtube-transcripts/
+    alex-hormozi/                     ← 5 transcript files
+    patrick-dang/                     ← 5 transcript files
+    alex-berman/                      ← 5 transcript files
+    30mpc/                            ← 5 transcript files
+    alex-vacca/                       ← 5 files (4 transcripts + official ColdIQ guide)
+  linkedin-posts/
+    josh-braun.md
+    jason-bay.md
+    belal-batrawy.md
+    justin-michael.md
+    jack-reamer.md
+  other/                              ← reserved for future additions
+README.md
+```
+
+---
+
+### Commit History
+
+Each expert's content was committed individually (not in one giant push) to show incremental progress:
+
+1. `scaffold: research folder structure and sources`
+2. `research: add Alex Hormozi transcripts (5 cold outreach videos)`
+3. `research: add Patrick Dang transcripts (5 cold outreach videos)`
+4. `research: add Alex Berman transcripts (5 cold email videos)`
+5. `research: add 30 Minutes to President's Club transcripts (5 videos)`
+6. `research: add Alex Vacca / ColdIQ transcripts (4 videos + official guide)`
+7. `research: add Josh Braun linkedin posts (cold outreach psychology)`
+8. `research: add Jason Bay linkedin posts (REPLY method, mobile email)`
+9. `research: add Belal Batrawy linkedin posts (Death to Fluff methodology)`
+10. `research: add Justin Michael linkedin posts (JMM tech-powered outbound)`
+11. `research: add Jack Reamer linkedin posts (CCQ method, Fibonacci cadence)`
+12. `docs: update README with Step 2 research`
